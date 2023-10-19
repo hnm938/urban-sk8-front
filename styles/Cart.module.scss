@@ -1,0 +1,211 @@
+@import "mixins";
+
+.cart {
+  width: 90cqw;
+  margin: 1cqw auto 0 auto;
+
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 0 2cqw;
+
+  .section-container {
+    background-color: white !important;
+    border-radius: 0.5rem;
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem 0;
+
+    h1 {
+      font-family: "Montserrat", sans-serif;
+
+      color: var(--black-1);
+      font-size: clamp(16px, 1.2cqw, 1.2cqw);
+      letter-spacing: 0.1em;
+      font-weight: 600;
+      border-bottom: solid var(--coral-1) 2px;
+    }
+  }
+
+  .cart-container {
+    font-family: "Titillium Web", sans-serif;
+
+    tbody tr:nth-child(1) td {
+      margin-bottom: 1.5cqw;
+      h1 { display: block; }
+    }
+    tbody td h1 {
+      display: none;
+      margin: 0 0 0.5em 0;
+      
+      border: none;
+      color: gray;
+      font-family: inherit;
+      font-size: clamp(12px, 0.9cqw, 0.9cqw);
+    }
+
+    thead tr { margin-bottom: 0.5cqw; }
+    tr {
+      display: grid;
+      grid-template-columns: 0.25fr 0.35fr 0.15fr 0.25fr;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 0 1.5cqw;
+      border: solid re 1px;
+      
+      &:nth-last-of-type(1) {
+        padding: 0.5em;
+        margin-top: 2em;
+        border: solid var(--coral-1) 2px;
+        border-width: 2px 0;
+      }
+    }
+
+    .cart-product--image {
+      width: 100%;
+      min-width: 100px;
+      aspect-ratio: 1 / 1;
+    }
+
+    .cart-product--props {
+      h2 {
+        font-weight: 700;
+        font-size: clamp(16px, 1.15cqw, 1.15cqw);
+      }
+      h3 {
+        letter-spacing: 0.05em;
+        text-transform: capitalize;
+        font-weight: 600;
+        font-size: clamp(14px, 0.8cqw, 0.8cqw);
+
+        span {
+          text-transform: lowercase;
+          font-size: clamp(12px, 0.9cqw, 0.9cqw);
+          font-weight: 500;
+          color: var(--coral-1);
+        }
+      }
+
+      .product-props--options {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
+    }
+
+    .cart-product--quantity {
+      height: 100%;
+      color: whitesmoke;
+
+      @include flex(row, center, flex-start);
+      button {
+        @include flex;
+
+        background-color: var(--coral-2);
+        font-size: clamp(14px, 0.9cqw, 0.9cqw);
+        width: 25px;
+        height: 1.5cqw;
+        min-height: 25px;
+      }
+
+      span {
+        @include flex;
+        font-size: clamp(14px, 0.9cqw, 0.9cqw);
+        width: 60%;
+        min-width: 3cqw;
+        height: 1.5cqw;
+        min-height: 25px;
+        text-align: center;
+        background-color: var(--coral-1);
+      }
+    }
+
+    .cart-product--price h2 {
+      font-weight: 600;
+      font-size: clamp(16px, 1.1cqw, 1.1cqw);
+
+      span {
+        color: gray;
+        font-weight: 500;
+        font-size: clamp(12px, 0.85cqw, 0.85cqw);
+      }
+    }
+    
+    .cart-product--total {
+      text-transform: uppercase;
+      white-space: nowrap;
+      font-size: clamp(18px, 1.15cqw, 1.15cqw);
+      
+      b { color: var(--coral-1); }
+    }
+  }
+
+  .checkout-container {
+    input {
+      padding: 0.5em 1em;
+      margin: 0.25em 0;
+      border: solid var(--coral-3) 2px;
+      border-radius: 4px;
+      font-family: "Titillium Web", sans-serif;
+      
+      &:focus {
+        outline: none;
+        border-color: var(--coral-1);
+        font-weight: 600;
+      }
+    }
+  }
+
+  @media only screen and (max-width: 850px) {
+    @include flex;
+    gap: 4cqw 0;
+
+    .section-container {
+      width: 100%;
+    }
+  }
+
+  @media only screen and (max-width: 650px) {
+    .cart-container {
+      width: 90%;
+      padding: 0; 
+      margin: 0;
+
+      .table-spacer { display: none; }
+
+      tbody td h1 {
+        display: block;
+        margin: 0 0 0.5em 0;
+      }
+      
+      tr {
+        gap: 0.75em 0;
+        border-bottom: solid var(--coral-3) 1px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 0.25fr 0.35fr 0.15fr 0.20fr;
+
+        &:nth-last-of-type(2) {
+          border-bottom: solid var(--coral-1) 2px;
+        }
+        &:nth-last-of-type(1) {
+          margin: 0.25em 0 0 0;
+          border: none;
+        }
+      }
+
+      .cart-product--image {
+        width: 50%;
+        margin: 1em auto 2em auto;
+        aspect-ratio: 1 / 1;
+      }
+      .cart-product--quantity { width: 25%; min-width: 100px; }
+    }
+    
+    .checkout-container {
+      padding: 0;
+      width: 90%;
+      margin-bottom: 100px;
+    }
+  }
+}

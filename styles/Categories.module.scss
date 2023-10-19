@@ -1,0 +1,20 @@
+@import "mixins";
+
+.Categories {
+  margin: 3cqw 0;
+  
+  div {
+    position: relative;
+    margin-bottom: 0.75cqw;
+
+    .category-link {
+      position: absolute;
+      left: 50%; bottom: -0.5cqw;
+      transform: translateX(-50%);
+      
+      color: var(--coral-1);
+      font-size: clamp(14px, 1cqw, 1cqw);
+      text-decoration: underline;
+    }
+  }
+}

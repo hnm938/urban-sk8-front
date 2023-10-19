@@ -1,0 +1,24 @@
+@import "mixins";
+
+.Products {
+  width: 90%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  gap: 2cqw 0;
+
+  margin: 3cqw auto;
+
+  a { @include flex; }
+  
+  @media screen and (max-width: 900px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @media screen and (max-width: 550px) {
+    grid-template-columns: 1fr 1fr;
+  }
+  @media screen and (max-width: 375px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}

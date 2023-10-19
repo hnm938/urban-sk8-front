@@ -1,0 +1,85 @@
+@import "../mixins";
+
+.Filter {
+  // background-color: rgba(0, 0, 0, 0.025); 
+
+  height: 100vh;
+  width: fit-content;
+  padding: 0 1em;
+  margin-top: 4px;
+  
+  position: sticky;
+  top: -55px;
+
+  @include flex(column, center, flex-start);
+
+  font-family: "Titillium Web", sans-serif;
+  font-size: 16px;
+  letter-spacing: 0.1em;
+
+  hr {
+    width: 90%;
+    height: 1px;
+    border: none;
+  }
+
+  h1 {
+    margin-top: 20px;
+    align-self: flex-start;
+    margin: 1em 1em;
+  }
+
+  .property-group {
+    width: 95%;
+    height: fit-content;
+    margin-top: 2em;
+
+    @include flex(column, flex-start);
+    gap: 1em 0;
+
+    h1 {
+      margin: 0;
+      font-size: 18px;
+      text-transform: uppercase;
+      border-bottom: solid var(--coral-1) 0.25em;
+      
+      position: relative;
+
+      .group--filters-clear {
+        position: absolute;
+        right: -35px; top: 50%;
+        transform: translateY(-50%);  
+
+        color: var(--coral-2);
+        cursor: pointer;
+        svg {
+          transition: color 15ms ease;
+          &:hover { color: var(--coral-1); }
+        }
+      }
+    }
+
+    .group--filters {
+      width: 100%;
+      aspect-ratio: fixed;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 0.5em;
+
+      .group--filter-button {
+        border: solid var(--coral-1) 1px;
+        padding: 0.25em 0.5em;
+
+
+        border: solid var(--coral-1) 1px;
+        border-radius: 4px;
+
+        &.selected {
+          background-color: var(--coral-1);
+          color: white;
+        }
+      }
+    }
+  }
+}
