@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 import { Button } from "@/components/StyledComponents";
 import { CartContext } from "@/components/CartContext";
 import Layout from "@/components/Layout";
@@ -27,6 +29,7 @@ export default function CartPage() {
       setProducts([]);
     }
   }, [cartProducts]);
+
   useEffect(() => {
     if (typeof window === "undefined") {
       return;
@@ -35,7 +38,7 @@ export default function CartPage() {
       setIsSuccess(true);
       clearCart();
     }
-  }, []);
+  }, [clearCart]);
 
   function increaseItemQuantity(id) {
     addProduct(id);
@@ -86,10 +89,15 @@ export default function CartPage() {
             <table>
               <tbody>
                 {products.map((product) => (
-                  <tr>
+                  <tr key={product._id}>
                     <td className={styles["cart-product--image"]}>
                       <h1> </h1>
-                      <img src={product.images[0]} alt="" />
+                      <Image
+                        width="9999"
+                        height="9999"
+                        src={product.images[0]}
+                        alt=""
+                      />
                     </td>
                     <td className={styles["cart-product--props"]}>
                       <h1>Product</h1>

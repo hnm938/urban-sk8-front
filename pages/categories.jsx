@@ -14,11 +14,11 @@ export default function Categories({ parentCategories, categoryProducts }) {
     <Layout>
       <div className={styles["Categories"]}>
         {parentCategories.map((category) => (
-          <div>
+          <div key={category._id}>
             <ProductCarousel
               title={category.name}
               margin="1.5cqw 0"
-              products={...categoryProducts[category._id]}
+              products={categoryProducts[category._id]}
             />
             <Link
               className={styles["category-link"]}

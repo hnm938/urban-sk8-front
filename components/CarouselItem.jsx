@@ -1,4 +1,5 @@
 import styles from "@/styles/components/CarouselItem.module.scss";
+import Image from "next/image";
 import Link from "next/link";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -9,7 +10,7 @@ export const CarouselItem = ({ _id, title, description, price, images, className
     <Link href={`/product/${_id}`}>
       <div className={`${styles["carousel-item"]} ${className}`}>
         <div className={styles["item--image"]}>
-          <img src={images[0]} alt="item image" />
+          <Image width="9999" height="9999" src={images[0]} alt="item image" />
         </div>
         <div className={styles["item--rating"]}>
           <FontAwesomeIcon icon={faStar} />

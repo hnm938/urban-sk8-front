@@ -1,3 +1,6 @@
+import Image from "next/image";
+import Link from "next/link";
+
 import { CartContext } from "@/components/CartContext";
 import Layout from "@/components/Layout";
 import { mongooseConnect } from "@/lib/mongoose";
@@ -11,8 +14,6 @@ import { faStar } from "@fortawesome/free-solid-svg-icons";
 
 import styles from "@/styles/SingleProduct.module.scss";
 import { Button } from "@/components/StyledComponents";
-import { ProductCarousel } from "@/components/ProductCarousel";
-import Link from "next/link";
 
 export default function SingleProduct({ product, relatedProducts }) {
   const { addProduct } = useContext(CartContext);
@@ -35,6 +36,7 @@ export default function SingleProduct({ product, relatedProducts }) {
           <ScrollContainer className={styles["product-gallery--preview"]}>
             {product.images.map((image) => (
               <img
+                key={image}
                 src={image}
                 alt="product_image"
                 onClick={(e) => {
@@ -89,9 +91,12 @@ export default function SingleProduct({ product, relatedProducts }) {
               <h1 className={styles["related--title"]}>Related Products</h1>
               <div className={styles["related--products"]}>
                 {relatedProducts.map((p) => (
-                  <Link href={`/product/${p._id}`}>
+                  <Link key={p._id} href={`/product/${p._id}`}>
                     <div>
-                      <img src={p.images[0]} alt="related item" />
+                      <img
+                        src={p.images[0]}
+                        alt="related item"
+                      />
                     </div>
                   </Link>
                 ))}

@@ -73,10 +73,10 @@ export default function Home({ newProducts }) {
           <div id={style["about--info"]}>
             <h1>Our Mission</h1>
             <p>
-              At Urban Sk8, we're driven by the skate culture and a passion to
+              At Urban Sk8, we&apos;re driven by the skate culture and a passion to
               make a positive impact. Founded by skaters, our brand is rooted in
-              the community we love. When you shop with us, you're not just
-              getting fashionable clothing; you're investing in our mission. A
+              the community we love. When you shop with us, you&apos;re not just
+              getting fashionable clothing; you&apos;re investing in our mission. A
               portion of every purchase goes towards empowering troubled youth
               through skateboarding, creating opportunities for them to discover
               the thrill and camaraderie it offers. Join us in uniting style,
@@ -166,7 +166,7 @@ export default function Home({ newProducts }) {
             <p>
               Urban Sk8 is the embodiment of skate culture. Crafted by
               passionate skaters, exuding authenticity, style, and energy of the
-              skate world. You're not just wearing clothing; you're embracing a
+              skate world. You&apos;re not just wearing clothing; you&apos;re embracing a
               lifestyle.
             </p>
             <Button>Learn More</Button>
@@ -176,7 +176,7 @@ export default function Home({ newProducts }) {
             <h1>Giving Back</h1>
             <p>
               We believe in giving back to the community that inspires us.
-              That's why we commit to donating 1% of our profits to support
+              That&apos;s why we commit to donating 1% of our profits to support
               troubled youth in finding their passion for skating.
             </p>
             <Button>Learn More</Button>

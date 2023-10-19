@@ -88,7 +88,7 @@ export default function Filters({
     axios.get(url).then((res) => {
       setProducts(res.data);
     });
-  }, [filtersValues, sort, filtersChanged]);
+  }, [filtersValues, sort, filtersChanged, setProducts, subCategories, category._id]);
 
   return (
     <div className={styles["Filter"]}>
