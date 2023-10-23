@@ -2,23 +2,91 @@
 
 .Products {
   width: 90%;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: auto;
-  gap: 2cqw 0;
+  margin: 3cqw auto 0 auto;
+  @include flex;
+  gap: 1cqw 0;
 
-  margin: 3cqw auto;
+  .featured-product {
+    width: 100%;
+    height: 400px;
 
-  a { @include flex; }
-  
-  @media screen and (max-width: 900px) {
-    grid-template-columns: 1fr 1fr 1fr;
+    @include flex(column, center, flex-start);
+    justify-content: space-between;
+    position: relative;
+    
+    h1 {
+      transform: translateX(-13cqw);
+      letter-spacing: 0.1em;
+      color: var(--coral-1);
+      font-size: 80px;
+      font-weight: 700;
+      position: relative;
+
+      &::after {
+        content: "Featured";
+        position: absolute;
+        left: 0;
+        color: transparent;
+        -webkit-text-stroke: 2px var(--coral-1);
+        z-index: 999;
+      }
+    }
+
+    h2 {
+      font-style: italic;
+      transform: translate(11cqw, 120px);
+      letter-spacing: 0.1em;
+      color: var(--coral-1);
+      font-size: 40px;
+      font-weight: 700;
+      position: relative;
+      z-index: 999;
+    }
+
+    button {
+      font-size: clamp(14px, 0.8cqw, 0.8cqw);
+      padding: 25px 2.5cqw;
+      height: 10px;
+      position: absolute;
+      top: 110px; left: 5px;
+      z-index: 10;
+    }
+    
+    #title-image {
+      transform: translate(15cqw, 3cqw) scale(0.8);
+      grid-row: 3;
+      grid-column: 9;
+      z-index: 10;
+    }
+    
+    .featured--image {
+      height: 100%;
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+    }
   }
 
-  @media screen and (max-width: 550px) {
-    grid-template-columns: 1fr 1fr;
-  }
-  @media screen and (max-width: 375px) {
-    grid-template-columns: 1fr 1fr;
+  .all-products {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 2cqw 0;
+
+    a {
+      @include flex;
+    }
+
+    @media screen and (max-width: 900px) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @media screen and (max-width: 550px) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @media screen and (max-width: 375px) {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 }

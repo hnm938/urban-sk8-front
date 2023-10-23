@@ -46,7 +46,7 @@ export const Button = styled.button`
   }
 
   ${(props) =>
-    props.outlined &&
+    props.$outlined &&
     `
       background-color: transparent;
       outline: solid var(--coral-3) 2px;

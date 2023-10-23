@@ -55,7 +55,9 @@ export default function Home({ newProducts }) {
               <div>
                 <h1>Feel</h1>
                 <div>
-                  <Button>Shop</Button>
+                  <Link href="/featured">
+                    <Button>Shop</Button>
+                  </Link>
                   <h1>The</h1>
                 </div>
               </div>
