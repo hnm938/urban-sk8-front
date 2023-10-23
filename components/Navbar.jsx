@@ -49,7 +49,7 @@ const Navbar = () => {
       </nav>
       <div id={style["nav--icons"]}>
         {/* === NAVBAR ACCOUNT BUTTON === */}
-        <div
+        {/* <div
           className={style["nav--icons-account"]}
           onClick={() => {
             document
@@ -57,7 +57,6 @@ const Navbar = () => {
               .classList.toggle("open");
           }}
         >
-          {/* === SETTINGS & LOGOUT BUTTON === */}
           <div className="flex flex-row gap-x-2 mx-2">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -108,7 +107,8 @@ const Navbar = () => {
               d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"
             />
           </svg>
-        </div>
+        </div> */}
+
         {/* === NAVBAR TOGGLE BUTTON === */}
         <button
           id={style["nav--links-toggle"]}
